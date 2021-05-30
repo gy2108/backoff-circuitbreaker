@@ -5,7 +5,7 @@ which gives irregular response intermittent failures
 
 ## Method
 * Exponential Back off 
-* Circuit Breaker
+* Circuit Breaker -> ```python example/circuit_breaker.py```
 
 ### Why not Simple Retry?
 Suppose the service we are calling is already overloaded or there is rate limiting implemented 
