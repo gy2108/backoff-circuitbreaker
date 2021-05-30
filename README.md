@@ -7,7 +7,7 @@ which gives irregular response intermittent failures
 * Exponential Back off 
 * Circuit Breaker
 
-###Why not Simple Retry?
+### Why not Simple Retry?
 Suppose the service we are calling is already overloaded or there is rate limiting implemented 
 at the service end and it is giving transient faults then by doing simple retry after constant time 
 there may be a case that our retry request are further adding load to the busy service and will take longer to recover.
@@ -15,7 +15,7 @@ there may be a case that our retry request are further adding load to the busy s
 ## One Issue with Exponential Backoff
 If the transient fault is long lasting then our service will keep on retrying till maximum retries for every new request we get, that will be wasting of our resources.
 
-###The above issue solved by using circuit breaker
+### The above issue solved by using circuit breaker
 If the transient fault is long lasting then the circuit breaker is opened after the first request which goes to maximum retries, for any further request the circuit breaker directly sends an error message that the service is down(no retries).
 
 After some timeout period circuit breaker will move to HALF-OPEN state.
